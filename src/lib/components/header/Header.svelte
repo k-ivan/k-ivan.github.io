@@ -1,8 +1,13 @@
 <script>
 	import { page } from '$app/stores';
+
+	$: isHome = $page.path === '/';
 </script>
 
-<header>
+<header
+	class="header"
+	class:is-home="{isHome}"
+>
 	<div class="corner">
 		<a href="https://kit.svelte.dev">
 			<img src="/logo.svg" alt="ik logo" />
@@ -11,19 +16,26 @@
 
 	<nav>
 		<ul>
-			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.path === '/about'}><a sveltekit:prefetch href="/about">About</a></li>
-			<li class:active={$page.path === '/todos'}><a sveltekit:prefetch href="/todos">Todos</a></li>
+			<li><a class:active="{$page.path === '/'}" sveltekit:prefetch href="/">Home</a></li>
+			<!-- <li><a class:active="{$page.path === '/about'}" sveltekit:prefetch href="/about">About</a></li>
+			<li><a class:active="{$page.path === '/todos'}" sveltekit:prefetch href="/todos">Todos</a></li> -->
 		</ul>
 	</nav>
 
 	<div class="corner">
-		111
+		<a href="https://github.com/k-ivan">
+			<img src="/logos/github.svg" alt="Github">
+		</a>
 	</div>
 </header>
 
-<style>
+<style lang="postcss">
 	header {
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		right: 0;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -50,17 +62,12 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
 	}
 
 	svg {
 		width: 2em;
 		height: 3em;
 		display: block;
-	}
-
-	path {
-		fill: var(--background);
 	}
 
 	ul {
@@ -72,25 +79,11 @@
 		justify-content: center;
 		align-items: center;
 		list-style: none;
-		background: var(--background);
-		background-size: contain;
 	}
 
 	li {
 		position: relative;
 		height: 100%;
-	}
-
-	li.active::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--accent-color);
 	}
 
 	nav a {
@@ -103,11 +96,12 @@
 		font-size: 0.8rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
-		text-decoration: none;
+		text-underline-offset: 0.3em;
 		transition: color 0.2s linear;
 	}
 
+	a.active,
 	a:hover {
-		color: var(--accent-color);
+		text-decoration: underline;
 	}
 </style>

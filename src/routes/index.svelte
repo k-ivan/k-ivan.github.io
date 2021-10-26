@@ -58,7 +58,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Ivan Kuzmichov - Home page</title>
 </svelte:head>
 
 <HomeHero/>
@@ -94,12 +94,6 @@
 </section>
 
 <style lang="postcss">
-	:global(header) {
-		position: absolute;
-		left: 0;
-		right: 0;
-		z-index: 1000;
-	}
 	.works {
 		display: grid;
 		grid-template-columns: 1fr;

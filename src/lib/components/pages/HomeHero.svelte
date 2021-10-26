@@ -41,25 +41,6 @@
   padding-bottom: 100px;
   position: relative;
   overflow: hidden;
-  /* background-image: linear-gradient(
-    to bottom,
-    hsl(212.61, 69.7%, 87.06%) 0%,
-    hsla(212.61, 69.7%, 87.06%, 0.914) 2.8%,
-    hsla(212.61, 69.7%, 87.06%, 0.825) 5.1%,
-    hsla(212.61, 69.7%, 87.06%, 0.735) 7%,
-    hsla(212.61, 69.7%, 87.06%, 0.644) 8.9%,
-    hsla(212.61, 69.7%, 87.06%, 0.554) 11%,
-    hsla(212.61, 69.7%, 87.06%, 0.467) 13.6%,
-    hsla(212.61, 69.7%, 87.06%, 0.383) 16.9%,
-    hsla(212.61, 69.7%, 87.06%, 0.304) 21.1%,
-    hsla(212.61, 69.7%, 87.06%, 0.231) 26.6%,
-    hsla(212.61, 69.7%, 87.06%, 0.166) 33.6%,
-    hsla(212.61, 69.7%, 87.06%, 0.11) 42.4%,
-    hsla(212.61, 69.7%, 87.06%, 0.064) 53.1%,
-    hsla(212.61, 69.7%, 87.06%, 0.029) 66.1%,
-    hsla(212.61, 69.7%, 87.06%, 0.008) 81.7%,
-    hsla(212.61, 69.7%, 87.06%, 0) 100%
-  ); */
   background-color: hsl(var(--hero-background-hsl));
 }
 @media (min-width: 480px) {
@@ -124,7 +105,7 @@
   );
   &.is-html {
     top: 15%;
-    left: calc(50% - 2.5vmin);
+    left: calc(50% - 5%);
     background-image: url('/logos/html.svg');
   }
   &.is-css {
@@ -134,21 +115,21 @@
   }
   &.is-js {
     top: 55%;
-    left: 76%;
+    left: 73%;
     background-image: url('/logos/javascript.svg');
   }
   &.is-php {
     top: 15%;
-    left: 7%;
+    left: 5%;
     background-image: url('/logos/php.svg');
   }
   &.is-vue {
     top: 74%;
-    left: 88%;
+    left: 85%;
     background-image: url('/logos/vue.svg');
   }
   &.is-svelte {
-    top: 95%;
+    top: 93%;
     left: 55%;
     background-image: url('/logos/svelte.svg');
   }
@@ -159,7 +140,7 @@
   }
   &.is-sass {
     top: 74%;
-    left: 3%;
+    left: 4%;
     background-image: url('/logos/sass.svg');
   }
 }

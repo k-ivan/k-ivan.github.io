@@ -25,7 +25,6 @@
 		<NavigationProgress/>
 	</div>
 {/if}
-
 <div class="layout">
 	<Header />
 	<main>
@@ -38,7 +37,8 @@
 .layout {
 	display: grid;
 	grid-template-columns: 100%;
-	grid-template-rows: auto 1fr auto;
+	grid-template-rows: 1fr auto;
+	min-height: 100vh;
 }
 .progress-bar {
 	position: relative;
