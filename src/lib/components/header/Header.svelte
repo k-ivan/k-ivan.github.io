@@ -1,15 +1,10 @@
 <script>
 	import { page } from '$app/stores';
-
-	$: isHome = $page.path === '/';
 </script>
 
-<header
-	class="header"
-	class:is-home="{isHome}"
->
+<header class="header">
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
+		<a href="/">
 			<img src="/logo.svg" alt="ik logo" />
 		</a>
 	</div>
