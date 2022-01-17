@@ -2,7 +2,7 @@
 	import { browser } from '$app/env';
 	import { onMount, onDestroy } from "svelte";
 	import HomeHero from '$lib/components/pages/HomeHero.svelte';
-	import { arrayChunk } from '$lib/utils';
+	import { arraySplit2Parts } from '$lib/utils';
 
 	const works = [
 		{
@@ -21,6 +21,15 @@
 			link: 'https://k-ivan.github.io/validator/'
 		},
 		{
+			title: 'Material ripple effect',
+			desc: 'Simple implementing the ripple effect from the Material Design',
+			link: 'https://github.com/k-ivan/Material-ripple'
+		},
+		{
+			title: 'WanderTab',
+			desc: 'Inspiring start page. With weather, date, search, bookmarks, customizable services, light effects and a gallery of pictures.',
+		},
+		{
 			title: 'Glory Modal',
 			desc: 'Modal dialog plugin with multimodals support inspired by Bootstrap modal dialogs and written in pure JavaScript.',
 			link: 'https://github.com/k-ivan/glory-modal'
@@ -29,16 +38,10 @@
 			title: 'CSelect',
 			desc: 'Custom select plugin allows you to replace the standard selected on their own, which can be styled as your heart desires. Default stylized standard select. Mechanic behavior as much as possible trying to match the standard selects.',
 			link: 'https://github.com/Zveromag/cselect'
-		},
-		{
-			title: 'Material ripple effect',
-			desc: 'Simple implementing the ripple effect from the Material Design',
-			link: 'https://github.com/k-ivan/Material-ripple'
 		}
 	];
-	const [worksColumn1, worksColumn2] = arrayChunk(works, 3);
 
-
+	const [worksColumn1, worksColumn2] = arraySplit2Parts(works);
 
 	function handleScroll() {
 		document.documentElement.style.setProperty(

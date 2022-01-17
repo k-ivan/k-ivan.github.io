@@ -12,7 +12,7 @@ export function isMobile() {
  * Array chunk
  * @param {Array<any>} arr - array
  * @param {number} size - chunk size
- * @returns
+ * @returns {Array[]} array
  */
 export function arrayChunk(arr, size) {
   return Array.from({
@@ -20,6 +20,19 @@ export function arrayChunk(arr, size) {
   }, (v, i) =>
     arr.slice(i * size, i * size + size)
   );
+}
+
+/**
+ * Split array in 2 parts
+ * @param {Array<any>} arr
+ * @returns {Array[]} array
+ */
+export function arraySplit2Parts(arr) {
+  const splitIndex = Math.ceil(arr.length / 2)
+  return [
+    arr.slice(0, splitIndex),
+    arr.slice(splitIndex)
+  ];
 }
 
 /**
